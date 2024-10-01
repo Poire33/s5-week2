@@ -1,10 +1,9 @@
 package ie.atu.week2.week2;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@RequestMapping("/person")
 public class Week2 {
     @GetMapping("/hello")
     public String message()
@@ -15,6 +14,11 @@ public class Week2 {
     public String myName(String name)
     {
         return "Your Name is " + name;
+    }
+    @GetMapping("/search")
+    public String search(@RequestParam String search1, @RequestParam(required = false) String search2)
+    {
+        return search1 + " " + search2;
     }
 
 }
