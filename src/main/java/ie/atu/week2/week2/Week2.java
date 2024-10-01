@@ -11,7 +11,7 @@ public class Week2 {
         return "Hello";
     }
     @GetMapping("/hello/{name}")
-    public String myName(String name)
+    public String myName(@PathVariable String name)
     {
         return "Your Name is " + name;
     }
